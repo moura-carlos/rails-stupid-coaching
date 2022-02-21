@@ -1,0 +1,32 @@
+<%if @answer == "I am going to work"%>
+  <div class="answer">
+    <p><%=@answer%></p>
+    <p><em>-You</em></p>
+  </div>
+  <div class="yellow">
+    <% coach_answer = "Great" %>
+    <p><%=coach_answer%></p>
+    <p><em>-Your coach</em></p>
+  </div>
+<%elsif @answer[-1] == '?'%>
+  <div class="answer">
+    <p><%=@answer%></p>
+    <p><em>-You</em></p>
+  </div>
+  <div class="yellow">
+    <%coach_answer = "Silly question, get dressed and go to work!"%>
+    <p><%=coach_answer%></p>
+    <p><em>-Your coach</em></p>
+  </div>
+<%else%>
+  <div class="answer">
+    <p><%=@answer%></p>
+    <p><em>-You</em></p>
+  </div>
+  <div class="yellow">
+  <%coach_answer = "I don't care, get dressed and go to work!"%>
+  <p><%=coach_answer%></p>
+  <p><em>-Your coach</em></p>
+  </div>
+<%end%>
+<%= link_to "Ask a new question", ask_path %>
